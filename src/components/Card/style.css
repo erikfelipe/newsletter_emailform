@@ -1,3 +1,20 @@
 .bg-color {
   background-color: #36384e;
 }
+/* Estilos para o wrapper do conteúdo da seção 1 */
+.content-wrapper {
+  max-width: 80%; /* Ajuste conforme a largura do H1 ou valor desejado */
+  margin-top: 50px; /* Margem superior para separar do título */
+  margin-bottom: 50px;
+  display: flex;
+
+  flex-direction: column;
+  text-align: start;
+  color: #242742;
+  font-family: "Roboto-Regular";
+}
+
+.content-wrapper h2 {
+  margin-top: 30px;
+  margin-bottom: 30px; /* Margem inferior para separar do próximo elemento */
+}
