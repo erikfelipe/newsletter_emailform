@@ -11,13 +11,13 @@ The designs were created to the following widths:
 
 ### Primary
 
-- Tomato: hsl(4, 100%, 67%)
+- Tomato: hsl(4, 100%, 67%) #ff6257
 
 ### Neutral
 
-- Dark Slate Grey: hsl(234, 29%, 20%)
-- Charcoal Grey: hsl(235, 18%, 26%)
-- Grey: hsl(231, 7%, 60%)
+- Dark Slate Grey: hsl(234, 29%, 20%) #242742
+- Charcoal Grey: hsl(235, 18%, 26%) #36384e
+- Grey: hsl(231, 7%, 60%) #9294a0
 - White: hsl(0, 0%, 100%)
 
 ## Typography
