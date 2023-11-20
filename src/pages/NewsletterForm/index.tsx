@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../../components/Card/index.tsx";
 import illustrationDsk from "../../assets/images/illustration-sign-up-desktop.svg";
 import List from "../../components/List/index.tsx";
@@ -8,6 +8,7 @@ import Button from "../../components/Button/index.tsx";
 
 const NewsletterForm = () => {
   const [inputValue, setInputValue] = useState("");
+  const [active, setActive] = useState(false);
 
   const items = [
     { icon: iconList, text: "Product discovery and building what matters" },
@@ -23,6 +24,14 @@ const NewsletterForm = () => {
     event.preventDefault();
     console.log(inputValue);
   };
+
+  useEffect(() => {
+    if (inputValue.length > 0) {
+      setActive(true);
+    } else {
+      setActive(false);
+    }
+  }, [inputValue]);
 
   return (
     <form onSubmit={handleFormSubmit}>
@@ -42,7 +51,7 @@ const NewsletterForm = () => {
                 placeholder="erikfelipebh@gmail.com"
                 onInputChange={handleInputChange}
               />
-              <Button />
+              <Button active={active} />
             </div>
           </section>
           <section className="ml-3">
