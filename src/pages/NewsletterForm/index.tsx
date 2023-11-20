@@ -1,43 +1,39 @@
 import React from "react";
 import Card from "../../components/Card/index.tsx";
 import illustrationDsk from "../../assets/images/illustration-sign-up-desktop.svg";
+import List from "../../components/List/index.tsx";
 import iconList from "../../assets/images/icon-list.svg";
+import InputText from "../../components/InputText/index.tsx";
+import Button from "../../components/Button/index.tsx";
 
 const NewsletterForm = () => {
+  const items = [
+    { icon: iconList, text: "Product discovery and building what matters" },
+    { icon: iconList, text: "Measuring to ensure updates are a success" },
+    { icon: iconList, text: "And much more!" },
+  ];
+
   return (
     <Card>
-      <section className="flex ">
-        <section className="flex flex-col items-center">
-          <div>
-            <h1 className="font_Roboto-Bold text-4xl">Stay updated!</h1>
+      <section className="flex">
+        <section className="flex flex-col items-center justify-center">
+          <div className="content-wrapper">
+            <h1 className="font_Roboto-Bold text-5xl">Stay updated!</h1>
+            <div>
+              <h2>
+                Join 60,000+ product managers receiving monthly updates on:
+              </h2>
+            </div>
+            <List items={items} />
+            <InputText
+              label="Email address"
+              placeholder="erikfelipebh@gmail.com"
+            />
+            <Button />
           </div>
-          <div>
-            <h2>Join 60,000+ product managers receiving monthly updates on:</h2>
-          </div>
-          <div>
-            <ul>
-              <div className="flex">
-                <img src={iconList} alt="iconList" className="mr-2" />
-                <li>Product discovery and building what matters</li>
-              </div>
-              <div>
-                <img src={iconList} alt="iconList" />
-                <li>Measuring to ensure updates are a success</li>
-              </div>
-              <div>
-                <img src={iconList} alt="iconList" />
-                <li>And much more!</li>
-              </div>
-            </ul>
-          </div>
-          <div>
-            <p>Email address</p>
-            <input placeholder="erikfelipebh@gmail.com" />
-          </div>
-          <button title="Subscribe to monthly newsletter" />
         </section>
         <section className="ml-3">
-          <img src={illustrationDsk} alt="imageDsk" className="w-60 " />
+          <img src={illustrationDsk} alt="imageDsk"  />
         </section>
       </section>
     </Card>
