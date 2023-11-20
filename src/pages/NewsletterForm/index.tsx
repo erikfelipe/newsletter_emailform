@@ -48,8 +48,9 @@ const NewsletterForm = () => {
               <List items={items} />
               <InputText
                 label="Email address"
-                placeholder="erikfelipebh@gmail.com"
+                placeholder="email@company.com"
                 onInputChange={handleInputChange}
+                hasError={true}//Criar validação
               />
               <Button active={active} />
             </div>
