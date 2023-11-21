@@ -5,8 +5,11 @@ import List from "../../components/List/index.tsx";
 import iconList from "../../assets/images/icon-list.svg";
 import InputText from "../../components/InputText/index.tsx";
 import Button from "../../components/Button/index.tsx";
+import { useNavigate } from "react-router-dom";
 
 const NewsletterForm = () => {
+  const navigate = useNavigate();
+
   const [inputValue, setInputValue] = useState("");
   const [buttonActive, setButtonActive] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -27,7 +30,7 @@ const NewsletterForm = () => {
     setSubmitted(true);
     if (!hasError && inputValue.length > 0) {
       console.log(inputValue);
-      // Lógica para lidar com o envio do formulário quando não há erro
+      navigate("/success");
     }
   };
 
