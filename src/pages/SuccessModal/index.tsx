@@ -6,19 +6,17 @@ import Button from "../../components/Button/index.tsx";
 const SuccessModal = () => {
   return (
     <Card>
-      <div className="content-wrapper">
+      <div className="content-success">
         <div>
           <img src={iconSuccess} alt="iconSuccess" />
         </div>
         <div>
           <h1 className="font_Roboto-Bold text-5xl">Thanks for subscribing!</h1>
         </div>
-        <div>
-          <h2>
-            A confirmation email has been sent to .... Please open it and click
-            the button inside to confirm your subscription.
-          </h2>
-        </div>
+        <h2>
+          A confirmation email has been sent to .... Please open it and click
+          the button inside to confirm your subscription.
+        </h2>
       </div>
       <Button active={true} />
     </Card>
