@@ -29,8 +29,7 @@ const NewsletterForm = () => {
     event.preventDefault();
     setSubmitted(true);
     if (!hasError && inputValue.length > 0) {
-      console.log(inputValue);
-      navigate("/success");
+      navigate("/success", { state: { inputValue } });
     }
   };
 
@@ -49,31 +48,36 @@ const NewsletterForm = () => {
   return (
     <form onSubmit={handleFormSubmit}>
       <Card>
-        <section className="flex">
-          <section className="flex flex-col items-center justify-center">
-            <div className="content-wrapper">
-              <h1 className="font_Roboto-Bold text-5xl">Stay updated!</h1>
-              <div>
-                <h2>
-                  Join 60,000+ product managers receiving monthly updates on:
-                </h2>
+        <div className="p-4 bg-white flex flex-col items-center rounded-3xl shadow-mlg">
+          <section className="flex">
+            <section className="flex flex-col items-center justify-center">
+              <div className="content-wrapper">
+                <h1 className="font_Roboto-Bold text-5xl">Stay updated!</h1>
+                <div>
+                  <h2>
+                    Join 60,000+ product managers receiving monthly updates on:
+                  </h2>
+                </div>
+                <List items={items} />
+                <InputText
+                  label="Email address"
+                  placeholder="email@company.com"
+                  onInputChange={handleInputChange}
+                  hasError={submitted && hasError}
+                  setHasError={setHasError}
+                  resetSubmitted={handleInputReset}
+                />
+                <Button
+                  active={buttonActive}
+                  text={"Subscribe to monthly newsletter"}
+                />
               </div>
-              <List items={items} />
-              <InputText
-                label="Email address"
-                placeholder="email@company.com"
-                onInputChange={handleInputChange}
-                hasError={submitted && hasError}
-                setHasError={setHasError}
-                resetSubmitted={handleInputReset}
-              />
-              <Button active={buttonActive} />
-            </div>
+            </section>
+            <section className="ml-3">
+              <img src={illustrationDsk} alt="imageDsk" />
+            </section>
           </section>
-          <section className="ml-3">
-            <img src={illustrationDsk} alt="imageDsk" />
-          </section>
-        </section>
+        </div>
       </Card>
     </form>
   );
