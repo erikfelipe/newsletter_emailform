@@ -8,7 +8,9 @@ import Button from "../../components/Button/index.tsx";
 
 const NewsletterForm = () => {
   const [inputValue, setInputValue] = useState("");
-  const [active, setActive] = useState(false);
+  const [buttonActive, setButtonActive] = useState(false);
+  const [hasError, setHasError] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const items = [
     { icon: iconList, text: "Product discovery and building what matters" },
@@ -17,19 +19,27 @@ const NewsletterForm = () => {
   ];
 
   const handleInputChange = (value: string) => {
-    setInputValue(value); // Atualizando o estado com o valor do input
+    setInputValue(value);
   };
 
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(inputValue);
+    setSubmitted(true);
+    if (!hasError && inputValue.length > 0) {
+      console.log(inputValue);
+      // Lógica para lidar com o envio do formulário quando não há erro
+    }
+  };
+
+  const handleInputReset = (resetValue: boolean) => {
+    setSubmitted(resetValue);
   };
 
   useEffect(() => {
     if (inputValue.length > 0) {
-      setActive(true);
+      setButtonActive(true);
     } else {
-      setActive(false);
+      setButtonActive(false);
     }
   }, [inputValue]);
 
@@ -50,9 +60,11 @@ const NewsletterForm = () => {
                 label="Email address"
                 placeholder="email@company.com"
                 onInputChange={handleInputChange}
-                hasError={true}//Criar validação
+                hasError={submitted && hasError}
+                setHasError={setHasError}
+                resetSubmitted={handleInputReset}
               />
-              <Button active={active} />
+              <Button active={buttonActive} />
             </div>
           </section>
           <section className="ml-3">
