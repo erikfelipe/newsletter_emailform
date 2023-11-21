@@ -18,3 +18,32 @@
   margin-top: 30px;
   margin-bottom: 30px; /* Margem inferior para separar do próximo elemento */
 }
+
+.content-success {
+  /* Centralize o card e ajuste as margens */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 80px;
+  color: #242742;
+  font-family: "Roboto-Regular";
+}
+
+/* Reduza as margens para diminuir o espaço vertical */
+.content-success h1 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.content-success h2 {
+  margin-top: 20px;
+  font-family: "Roboto-Regular";
+}
+
+.content-success strong {
+  font-family: "Roboto-Bold";
+}
+
+.Card {
+  width: 500px;
+}
